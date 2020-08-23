@@ -1,0 +1,260 @@
+.page-header {
+  position: relative;
+  width: 100%;
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #ececec;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+    height: 400px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    text-align: center;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 1px 3px rgba(0, 0, 0, 0.16);
+  }
+
+  &__menu-box.is-open {
+    display: block;
+  }
+
+  &__button {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  &__icon-cross {
+    display: none;
+  }
+
+  &__button.is-open &__icon-cross {
+    display: block;
+  }
+
+  &__button.is-open &__icon-menu {
+    display: none;
+  }
+
+  &__icon-menu,
+  &__icon-cross {
+    transition: fill 250ms $timimng-fuction-bezier;
+  }
+
+  &__button:hover &__icon-menu,
+  &__button:hover &__icon-cross {
+    fill: $accent-color;
+  }
+
+  &__icon {
+    margin-right: 10px;
+
+    fill: currentColor;
+    transition: fill 250ms $timimng-fuction-bezier;
+
+    .page-header__contact:hover &,
+    .page-header__contact:focus & {
+      fill: $accent-color;
+    }
+  }
+
+  &__contact {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    color: $primary-text-color;
+
+    transition: color 250ms $timimng-fuction-bezier;
+  }
+  .page-header__contact:first-child {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .page-header__contact:hover,
+  .page-header__contact:focus {
+    color: $accent-color;
+  }
+}
+
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16;
+  color: $accent-color;
+}
+
+.site-nav {
+  &__logo-text {
+    color: #000000;
+  }
+
+  &__link {
+    position: relative;
+
+    display: inline-flex;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    color: $title-text-color;
+
+    transition: color 250ms $timimng-fuction-bezier;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    &.current {
+      color: $accent-color;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__item:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &__item:last-child {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background-color: $accent-color;
+  border-radius: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    padding: 0;
+  }
+
+  .page-header__menu-box {
+    position: static;
+
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 0;
+
+    box-shadow: none;
+  }
+
+  .page-header__button {
+    display: none;
+  }
+
+  .page-header__contact {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+
+    @media screen and (max-width: 1199px) {
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .site-nav__logo {
+    margin-right: 81px;
+  }
+
+  .site-nav__list {
+    display: flex;
+  }
+
+  .site-nav__item {
+    margin-bottom: 0;
+  }
+
+  .site-nav__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    .site-nav__item:last-child {
+      margin-right: 84px;
+    }
+  }
+
+  .site-nav__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    font-size: 14px;
+  }
+
+  .current::after {
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-header__container {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .site-nav {
+    margin-right: 305px;
+  }
+
+  .site-nav__logo {
+    margin-right: 85px;
+    font-size: 26px;
+    line-height: 1.19;
+  }
+
+  .page-header__address {
+    display: flex;
+  }
+
+  .page-header__contact {
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
+  .page-header__contact:first-child {
+    margin-right: 30px;
+  }
+}

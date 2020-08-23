@@ -1,0 +1,42 @@
+.works {
+  display: none;
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+
+  .works__box {
+    position: relative;
+    bottom: 0;
+  }
+
+  .works__list {
+    display: flex;
+  }
+
+  .works__item:not(:last-child) {
+    margin-right: 30px;
+  }
+  .works__image {
+    display: block;
+  }
+
+  .works__text {
+    position: absolute;
+    bottom: 0;
+
+    margin: 0;
+    width: 100%;
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    background-color: rgba(47, 48, 58, 0.8);
+  }
+}
