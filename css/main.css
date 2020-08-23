@@ -385,8 +385,10 @@ body {
   }
 }
 
-.page-header__menu-box.is-open {
-  display: block;
+@media screen and (max-width: 767px) {
+  .page-header__menu-box.is-open {
+    display: block;
+  }
 }
 
 .page-header__button {

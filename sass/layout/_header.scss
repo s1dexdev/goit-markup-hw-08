@@ -36,7 +36,9 @@
   }
 
   &__menu-box.is-open {
-    display: block;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
 
   &__button {
